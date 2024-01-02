@@ -1,0 +1,23 @@
+{
+  "name": "cc_replicator",
+  "config": {
+    "connector.class": "io.confluent.connect.replicator.ReplicatorSourceConnector",
+    "key.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
+    "value.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
+    "src.kafka.request.timeout.ms": "20000",
+    "src.kafka.sasl.mechanism": "PLAIN",
+    "src.kafka.bootstrap.servers": "localhost:19092",
+    "src.kafka.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"admin\" password=\"admin-secret\" serviceName=\"kafka\";",
+    "src.kafka.security.protocol": "SASL_PLAINTEXT",
+    "dest.kafka.ssl.endpoint.identification.algorithm": "https",
+    "dest.kafka.sasl.mechanism": "PLAIN",
+    "dest.kafka.request.timeout.ms": "20000",
+    "dest.kafka.bootstrap.servers": "pkc-4r087.us-west2.gcp.confluent.cloud:9092",
+    "dest.kafka.retry.backoff.ms": "500",
+    "dest.kafka.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"6P6YFMXNYJ44K43N\" password=\"4xk+pRFLt3LMOAyLaFCIXMwe9Kj0c7Lu/wL/z4Zs9ss0mNcQH/n1ObXC4etRPTxS\";",
+    "dest.kafka.security.protocol": "SASL_SSL",
+    "dest.topic.replication.factor": "3",
+    "topic.regex": ".*"
+  }
+}
+
